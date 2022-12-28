@@ -1,19 +1,20 @@
 <template>
-	<div id="IconComponent" class="">
+	<div id="IconComponent">
 		<div
-			class="flex items-center justify-center rounded-full cursor-pointer w-10 h-10"
+			class="flex items-center justify-center rounded-full cursor-pointer w-9 h-9"
 			:class="[hoverColor]"
 			:data-tooltip-target="`tooltip-no-arrow-${iconString}`"
 			data-tooltip-placement="bottom"
 		>
-			<component :is="icon" :size="IconSize" :fillColor="IconColor" />
-			<div
-				id="`tooltip-no-arrow-${iconString}`"
-				role="tooltip"
-				class="inline-block absolute invisible text-xs z-10 py-1 px-2 font-medium text-white rounded-sm shadow-sm opacity-0 tooltip dark:bg-gray-600 delay-150 bg-gray-800"
-			>
-				{{ text }}
-			</div>
+			<component :is="icon" :size="iconSize" :fillColor="iconColor" />
+		</div>
+
+		<div
+			:id="`tooltip-no-arrow-${iconString}`"
+			role="tooltip"
+			class="tooltip inline-block absolute invisible text-xs z-10 py-1 px-2 font-medium text-gray-100 rounded-md shadow-sm opacity-0 tooltip dark:bg-gray-600 delay-150 bg-gray-700"
+		>
+			{{ text }}
 		</div>
 	</div>
 </template>
@@ -38,7 +39,7 @@
 		hoverColor: String,
 	});
 
-	const { iconString, IconColor, text, hoverColor } = toRefs(props);
+	const { iconString, iconColor, iconSize, text, hoverColor } = toRefs(props);
 
 	let icon = null;
 
