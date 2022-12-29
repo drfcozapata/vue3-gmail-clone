@@ -5,7 +5,7 @@
 			data-tooltip-target="tooltip-no-arrow-user"
 			data-tooltip-placement="bottom"
 			src="https://via.placeholder.com/40"
-			class="rounded-full w-10 cursor-pointer"
+			class="rounded-full w-8 h-8 cursor-pointer"
 		/>
 		<div
 			v-show="!openMenu"
@@ -25,7 +25,7 @@
 			<div class="text-gray-700 w-full flex justify-center mt-2 text-lg">
 				Francisco Zapata
 			</div>
-			<div class="text-gray-700 w-full flex justify-center mt-2 text-sm pb-4 border-b">
+			<div class="text-gray-700 w-full flex justify-center mt-2 text-xs pb-4 border-b">
 				drfcozapata@gmail.com
 			</div>
 			<div class="flex justify-center my-5">

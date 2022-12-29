@@ -1,15 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 import EmailView from '../views/template/EmailView.vue';
+import HomeView from '../views/HomeView.vue';
+import MessageView from '../views/MessageView.vue';
 
 const routes = [
 	{
-		path: '/email',
+		path: '/',
 		component: EmailView,
 		children: [
 			{
 				path: '/',
 				component: HomeView,
+			},
+			{
+				path: 'message',
+				component: MessageView,
 			},
 		],
 	},

@@ -2,11 +2,11 @@ import { toRefs } from 'vue';
 <template>
 	<div id="LateralComponent">
 		<div
-			class="w-10 h-10 p-2.5 flex justify-center mb-3 hover:bg-neutral-200 rounded-full"
+			class="w-10 h-10 flex justify-center items-center mb-3 hover:bg-neutral-200 rounded-full hover:cursor-pointer"
 			:data-tooltip-target="`tooltip-no-arrow-${imageString}`"
 			data-tooltip-placement="bottom"
 		>
-			<img class="object-center" :src="`img/${imageComplement}.png`" />
+			<img class="object-center w-[18px] h-[18px]" :src="`img/${imageComplement}.png`" />
 		</div>
 
 		<div

@@ -1,16 +1,16 @@
 <template>
-	<div id="EmailView" class="bg-gray-50 h-screen">
-		<div id="TopMenu" class="flex items-center p-2">
-			<div class="logo-section flex justify-start items-center px-3.5">
+	<div id="EmailView" class="bg-gray-50 h-screen overflow-hidden">
+		<div id="TopMenu" class="flex items-center p-2 pt-[6.5px]">
+			<div class="logo-section flex justify-start items-center mt-[2px] px-3.5">
 				<IconComponent
 					iconString="menu"
 					iconColor="#636363"
-					:iconSize="22"
+					:iconSize="21.5"
 					hoverColor="hover:bg-neutral-200"
 					text="Main menu"
 					class="-ml-2 mr-2"
 				/>
-				<img width="100" src="/img/GmailLogo.png" alt="Gmail logo" title="Gmail" />
+				<img width="98" src="/img/GmailLogo.png" alt="Gmail logo" title="Gmail" />
 			</div>
 
 			<div class="flex w-full justify-between">
@@ -18,41 +18,43 @@
 					<IconComponent
 						iconString="magnify"
 						iconColor="#636363"
-						:iconSize="22"
+						:iconSize="21.5"
 						hoverColor="hover:bg-neutral-200"
 						text="Search"
 					/>
 					<input
-						class="w-full h-9 text-sm border-transparent border-none focus:ring-0 outline-none placeholder-gray-500"
+						class="w-full h-9 text-xs border-transparent border-none focus:ring-0 outline-none placeholder-gray-500"
 						type="text"
 						placeholder="Search email"
 					/>
 					<IconComponent
 						iconString="tune"
 						iconColor="#636363"
-						:iconSize="22"
+						:iconSize="21.5"
 						hoverColor="hover:bg-neutral-200"
 						text="Show search options"
 					/>
 				</div>
 
-				<div class="flex w-32 justify-between items-center ml-6 mr-2">
+				<div class="flex w-32 justify-between items-center ml-6 mr-1">
 					<IconComponent
 						iconString="cog"
 						iconColor="#636363"
-						:iconSize="22"
+						:iconSize="21.5"
 						hoverColor="hover:bg-neutral-200"
 						text="Settings"
 					/>
 					<IconComponent
 						iconString="apps"
 						iconColor="#636363"
-						:iconSize="22"
+						:iconSize="21.5"
 						hoverColor="hover:bg-neutral-200"
 						text="Google Apps"
 					/>
 
-					<div class="w-10 p-1 hover:bg-neutral-200 rounded-full">
+					<div
+						class="flex w-10 h-10 items-center justify-center hover:bg-neutral-200 rounded-full"
+					>
 						<UserComponent />
 					</div>
 				</div>
@@ -63,27 +65,28 @@
 			<div id="SideMenu" class="side-menu">
 				<div
 					@click="NewMessageOpen = true"
-					class="compose flex items-center justify-center bg-sky-200 mt-2 ml-1.5 rounded-2xl cursor-pointer"
+					class="compose flex items-center justify-center bg-sky-200 mt-1.5 ml-1.5 rounded-2xl cursor-pointer"
 				>
-					<PencilOutlineIcon :size="22" class="mr-3" />
+					<PencilOutlineIcon :size="21.5" class="-ml-[6px] mr-3" />
 					<span class="text-xs">Compose</span>
 				</div>
 
 				<div class="my-4"></div>
 
-				<div
-					class="side-menu-item flex justify-between pl-6 py-1.5 pr-3 bg-blue-100 text-slate-800 rounded-r-full"
-				>
-					<div class="flex items-center">
-						<InboxIcon :size="17" />
-						<div class="text-xs pl-4 font-semibold">Inbox</div>
+				<router-link to="/">
+					<div
+						class="side-menu-item flex justify-between pl-6 py-1.5 pr-3 bg-blue-100 text-slate-800 rounded-r-full hover:cursor-pointer"
+					>
+						<div class="flex items-center">
+							<InboxIcon :size="17" />
+							<div class="text-xs pl-4 font-semibold">Inbox</div>
+						</div>
+						<div class="side-menu-font font-semibold">26</div>
 					</div>
-
-					<div class="side-menu-font font-semibold">26</div>
-				</div>
+				</router-link>
 
 				<div
-					class="bg-gray-custom flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full"
+					class="flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full hover:bg-neutral-200 hover:cursor-pointer"
 				>
 					<div class="flex items-center">
 						<StarOutlineIcon :size="17" />
@@ -92,7 +95,7 @@
 				</div>
 
 				<div
-					class="bg-gray-custom flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full"
+					class="flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full hover:bg-neutral-200 hover:cursor-pointer"
 				>
 					<div class="flex items-center">
 						<ClockOutlineIcon :size="17" />
@@ -101,7 +104,7 @@
 				</div>
 
 				<div
-					class="bg-gray-custom flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full"
+					class="flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full hover:bg-neutral-200 hover:cursor-pointer"
 				>
 					<div class="flex items-center">
 						<SendOutlineIcon :size="17" />
@@ -110,7 +113,7 @@
 				</div>
 
 				<div
-					class="bg-gray-custom flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full"
+					class="flex justify-between px-6 py-1.5 text-slate-800 rounded-r-full hover:bg-neutral-200 hover:cursor-pointer"
 				>
 					<div class="flex items-center">
 						<FileOutlineIcon :size="17" />
@@ -121,7 +124,7 @@
 
 			<RouterView />
 
-			<div class="m-4">
+			<div class="ml-4 mr-1 mt-1">
 				<LateralComponent
 					imageComplement="GoogleCalendar"
 					imageString="calendar"
@@ -141,7 +144,7 @@
 				<div class="w-6 flex ml-2 mb-6 border border-gray-300"></div>
 				<div id="PlusComponent">
 					<div
-						class="w-10 h-10 p-2.5 flex justify-center mb-6 hover:bg-neutral-200 rounded-full text-gray-800"
+						class="w-10 h-10 p-2.5 flex justify-center mb-6 hover:bg-neutral-200 rounded-full text-gray-800 hover:cursor-pointer"
 						data-tooltip-target="tooltip-no-arrow-plus"
 						data-tooltip-placement="bottom"
 					>
@@ -164,7 +167,7 @@
 			class="absolute bottom-0 right-0 mr-20 rounded-t-lg shadow-xl bg-white text-xs font-semibold"
 		>
 			<div
-				class="flex items-center justify-between rounded-t-lg w-full text-sm px-3.5 py-2.5 bg-gray-100"
+				class="flex items-center justify-between rounded-t-lg w-full text-xs px-3.5 py-2.5 bg-gray-100"
 			>
 				<div>New Message</div>
 				<CloseIcon @click="NewMessageOpen = false" class="cursor-pointer" :size="18" />
@@ -227,10 +230,10 @@
 <style lang="scss">
 	#EmailView {
 		.logo-section {
-			min-width: 220px;
+			min-width: 222px;
 		}
 		.input-width {
-			width: 660px;
+			width: 650px;
 			background-color: #eaf1fb;
 
 			input {
@@ -238,15 +241,15 @@
 			}
 		}
 		.side-menu {
-			width: 202px;
+			width: 218px;
 
 			.compose {
-				width: 124px;
-				height: 52px;
+				width: 127px;
+				height: 49px;
 			}
 
 			.side-menu-item {
-				width: 202px;
+				width: 218px;
 
 				.side-menu-font {
 					font-size: 11px;
@@ -254,7 +257,7 @@
 			}
 
 			.bg-gray-custom {
-				background-color: #eee;
+				background-color: rgb(237 237 237);
 			}
 		}
 	}
