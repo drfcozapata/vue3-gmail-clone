@@ -6,7 +6,7 @@
 		<div>
 			<div class="flex items-center justify-between px-1.5 py-0.5">
 				<div class="flex">
-					<router-link to="/">
+					<router-link to="/email">
 						<IconComponent
 							iconString="back"
 							iconColor="#636363"
@@ -15,6 +15,7 @@
 							text="Back to Inbox"
 						/>
 					</router-link>
+
 					<IconComponent
 						iconString="trash"
 						iconColor="#636363"
@@ -73,25 +74,7 @@
 </template>
 
 <script setup>
-	// import { toRefs } from 'vue';
 	import IconComponent from '@/components/IconComponent.vue';
-	// import CheckboxBlankOutlineIcon from 'vue-material-design-icons/CheckboxBlankOutline.vue';
-	// import StarOutlineIcon from 'vue-material-design-icons/StarOutline.vue';
-	// import LabelVariantOutlineIcon from 'vue-material-design-icons/LabelVariantOutline.vue';
-
-	// // eslint-disable-next-line no-undef
-	// const props = defineProps({
-	// 	from: String,
-	// 	subject: String,
-	// 	body: String,
-	// 	time: String,
-	// });
-
-	// const { from, subject, body, time } = toRefs(props);
 </script>
 
-<style lang="scss">
-	#SingleMessageSection {
-		//
-	}
-</style>
+<style lang="scss"></style>

@@ -23,7 +23,7 @@
 						text="Search"
 					/>
 					<input
-						class="w-full h-9 text-xs border-transparent border-none focus:ring-0 outline-none placeholder-gray-500"
+						class="w-full h-9 text-[15px] border-transparent border-none focus:ring-0 outline-none placeholder-gray-500"
 						type="text"
 						placeholder="Search email"
 					/>
@@ -68,20 +68,20 @@
 					class="compose flex items-center justify-center bg-sky-200 mt-1.5 ml-1.5 rounded-2xl cursor-pointer"
 				>
 					<PencilOutlineIcon :size="21.5" class="-ml-[6px] mr-3" />
-					<span class="text-xs">Compose</span>
+					<span class="text-[13px] font-medium">Compose</span>
 				</div>
 
 				<div class="my-4"></div>
 
-				<router-link to="/">
+				<router-link to="/email">
 					<div
 						class="side-menu-item flex justify-between pl-6 py-1.5 pr-3 bg-blue-100 text-slate-800 rounded-r-full hover:cursor-pointer"
 					>
 						<div class="flex items-center">
 							<InboxIcon :size="17" />
-							<div class="text-xs pl-4 font-semibold">Inbox</div>
+							<div class="text-[12.5px] pl-4 font-semibold">Inbox</div>
 						</div>
-						<div class="side-menu-font font-semibold">26</div>
+						<div class="side-menu-font font-medium">26</div>
 					</div>
 				</router-link>
 
@@ -90,7 +90,7 @@
 				>
 					<div class="flex items-center">
 						<StarOutlineIcon :size="17" />
-						<div class="text-xs pl-4">Starred</div>
+						<div class="text-[12.5px] pl-4">Starred</div>
 					</div>
 				</div>
 
@@ -99,7 +99,7 @@
 				>
 					<div class="flex items-center">
 						<ClockOutlineIcon :size="17" />
-						<div class="text-xs pl-4">Snoozed</div>
+						<div class="text-[12.5px] pl-4">Snoozed</div>
 					</div>
 				</div>
 
@@ -108,7 +108,7 @@
 				>
 					<div class="flex items-center">
 						<SendOutlineIcon :size="17" />
-						<div class="text-xs pl-4">Sent</div>
+						<div class="text-[12.5px] pl-4">Sent</div>
 					</div>
 				</div>
 
@@ -117,12 +117,12 @@
 				>
 					<div class="flex items-center">
 						<FileOutlineIcon :size="17" />
-						<div class="text-xs pl-4">Drafts</div>
+						<div class="text-[12.5px] pl-4">Drafts</div>
 					</div>
 				</div>
 			</div>
 
-			<RouterView />
+			<router-view />
 
 			<div class="ml-4 mr-1 mt-1">
 				<LateralComponent
@@ -229,9 +229,12 @@
 
 <style lang="scss">
 	#EmailView {
+		overflow: hidden;
+
 		.logo-section {
 			min-width: 222px;
 		}
+
 		.input-width {
 			width: 650px;
 			background-color: #eaf1fb;
@@ -240,6 +243,7 @@
 				background-color: #eaf1fb;
 			}
 		}
+
 		.side-menu {
 			width: 218px;
 
@@ -269,6 +273,7 @@
 		}
 	}
 	#NewMessageSection {
+		overflow: hidden;
 		width: 526px;
 		height: 460px;
 	}

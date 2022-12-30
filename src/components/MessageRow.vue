@@ -10,7 +10,7 @@
 					<LabelVariantOutlineIcon class="ml-[12px]" :size="18" fillColor="#ccc" />
 				</div>
 				<div class="flex items-center w-full">
-					<router-link to="message" class="w-full">
+					<router-link to="/email/message" class="w-full">
 						<div class="flex items-center justify-between">
 							<div class="flex items-center w-full">
 								<div class="text-[12.5px] ml-[11px] font-semibold truncate-from">
@@ -24,7 +24,7 @@
 								</div>
 							</div>
 
-							<div class="text-right truncate mr-4 w-full text-[12.5px]">{{ time }}</div>
+							<div class="text-right truncate mr-4 w-full text-[12px]">{{ time }}</div>
 						</div>
 					</router-link>
 				</div>
