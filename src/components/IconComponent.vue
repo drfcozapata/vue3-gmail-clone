@@ -30,6 +30,8 @@
 	import ArrowLeftIcon from 'vue-material-design-icons/ArrowLeft.vue';
 	import TrashCanOutlineIcon from 'vue-material-design-icons/TrashCanOutline.vue';
 	import CheckboxBlankOutlineIcon from 'vue-material-design-icons/CheckboxBlankOutline.vue';
+	import CheckboxOutlineIcon from 'vue-material-design-icons/CheckboxOutline.vue';
+	import MinusBoxOutlineIcon from 'vue-material-design-icons/MinusBoxOutline.vue';
 
 	// eslint-disable-next-line no-undef
 	const props = defineProps({
@@ -52,7 +54,9 @@
 	if (iconString.value === 'apps') icon = AppsIcon;
 	if (iconString.value === 'back') icon = ArrowLeftIcon;
 	if (iconString.value === 'trash') icon = TrashCanOutlineIcon;
-	if (iconString.value === 'check') icon = CheckboxBlankOutlineIcon;
+	if (iconString.value === 'checkb') icon = CheckboxBlankOutlineIcon;
+	if (iconString.value === 'check') icon = CheckboxOutlineIcon;
+	if (iconString.value === 'checkm') icon = MinusBoxOutlineIcon;
 </script>
 
 <style scoped></style>

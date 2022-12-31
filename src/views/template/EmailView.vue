@@ -81,7 +81,7 @@
 							<InboxIcon :size="17" />
 							<div class="text-[12.5px] pl-4 font-semibold">Inbox</div>
 						</div>
-						<div class="side-menu-font font-medium">26</div>
+						<div class="side-menu-font font-medium">{{ userStore.emails.length }}</div>
 					</div>
 				</router-link>
 
@@ -164,28 +164,30 @@
 		<div
 			v-if="NewMessageOpen"
 			id="NewMessageSection"
-			class="absolute bottom-0 right-0 mr-20 rounded-t-lg shadow-xl bg-white text-xs font-semibold"
+			class="absolute bottom-0 right-0 mr-20 rounded-t-lg shadow-xl bg-white text-xs"
 		>
 			<div
 				class="flex items-center justify-between rounded-t-lg w-full text-xs px-3.5 py-2.5 bg-gray-100"
 			>
-				<div>New Message</div>
+				<div class="font-medium">{{ !subject ? 'New Email' : subject }}</div>
 				<CloseIcon @click="NewMessageOpen = false" class="cursor-pointer" :size="18" />
 			</div>
 
 			<div class="relative flex items-center px-3.5 py-2">
-				<div class="text-xs text-gray-600">To</div>
+				<div class="text-xs text-gray-600 font-medium">To</div>
 				<input
-					class="w-full h-6 border-transparent border-none focus:ring-0 outline-none"
+					v-model="toEmail"
+					class="w-full h-6 border-transparent border-none focus:ring-0 outline-none text-[14px]"
 					type="text"
 				/>
 				<div class="absolute border-b w-[calc(100%-30px)] bottom-0"></div>
 			</div>
 
 			<div class="relative flex items-center px-3.5 py-2">
-				<div class="text-xs text-gray-600">Subject</div>
+				<div class="text-xs text-gray-600 font-medium">Subject</div>
 				<input
-					class="w-full h-6 border-transparent border-none focus:ring-0 outline-none"
+					v-model="subject"
+					class="w-full h-6 border-transparent border-none focus:ring-0 outline-none text-[14px]"
 					type="text"
 				/>
 				<div class="absolute border-b w-[calc(100%-30px)] bottom-0"></div>
@@ -193,6 +195,7 @@
 
 			<div class="m-3">
 				<textarea
+					v-model="body"
 					style="resize: none"
 					class="w-full border-transparent border-none focus:ring-0 outline-none"
 					rows="14"
@@ -201,6 +204,7 @@
 
 			<div class="p-4 mt-5">
 				<button
+					@click="sendEmail"
 					class="absolute bottom-3 left-3 bg-blue-700 hover:bg-blue-600 text-white text-xs font-bold py-2 px-4 rounded-full"
 				>
 					Send Message
@@ -223,8 +227,25 @@
 	import PlusIcon from 'vue-material-design-icons/Plus.vue';
 	import CloseIcon from 'vue-material-design-icons/Close.vue';
 	import LateralComponent from '@/components/LateralComponent.vue';
+	import { useUserStore } from '@/store/user-store';
 
+	const userStore = useUserStore();
 	const NewMessageOpen = ref(false);
+	const toEmail = ref('');
+	const subject = ref('');
+	const body = ref('');
+
+	const sendEmail = async () => {
+		await userStore.sendEmail({
+			toEmail: toEmail.value,
+			subject: subject.value,
+			body: body.value,
+		});
+		NewMessageOpen.value = false;
+		toEmail.value = '';
+		subject.value = '';
+		body.value = '';
+	};
 </script>
 
 <style lang="scss">
