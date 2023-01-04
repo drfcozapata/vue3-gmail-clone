@@ -1,24 +1,61 @@
-# gmail-clone
+
+# Vue.js 3 Gmail Clone
+
+This app is a clone of Gmail. Haven't completly functionality; only allow you to send and receive message.
+
+It's a FULSTACK APP (frontend and backend) created with Vue CLI and was developed as a personal project using:
+- Frontend:
+    - Vue.js 3
+    - Vue router
+    - Pinia
+    - Vue Material Design Icons
+    - Vue 3 Google Login
+    - Google Auth Library
+    - TailwindCSS
+    - Axios
+    - SASS / PostCSS
+    - Moment
+    - UUID
+- Backend:
+    - Node.js
+    - Nodemon
+    - Express.js
+    - Cors
+    - Body parser
+
+The authentication run on Firebase.
 
 ## Project setup
+
+Staying in root directory, run the command, to instal frontend dependencies:
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
+Then, run the following commands to install backend dependencies:
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+cd backend
+yarn install
 ```
 
-### Lints and fixes files
+## Running the project in Development Mode
+
+From root, run the command:
 ```
-yarn lint
+yarn dev
+```
+To run de backend server, run the following commands:
+```
+cd backend
+npm run nodemon
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I hope you enjoy it and help you to learn Vue 3 using the Composition API.
+
+_Francisco Zapata_
+
+
+## Author
+
+- [@drfcozapata](https://www.github.com/drfcozapata)
+
+
